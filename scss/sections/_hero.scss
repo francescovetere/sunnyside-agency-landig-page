@@ -1,0 +1,69 @@
+@use "../abstracts/colors";
+@use "../abstracts/typography";
+@use "../abstracts/mixins";
+
+// * Macro-layout related styles
+.hero {
+  position: relative;
+
+  min-height: 500px;
+
+  @include mixins.mq(large, up) {
+    min-height: 100vh;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+// * header
+.hero__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+
+  margin-bottom: 4em;
+}
+
+.hero__logo {
+}
+
+.hero__nav {
+  &,
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  ul {
+    list-style: none;
+  }
+}
+
+// * title
+.hero__title {
+  font-family: typography.$ff-primary-serif;
+  font-size: typography.$fs-800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+  color: colors.$clr-white;
+
+  @include mixins.mq(large, up) {
+    font-size: typography.$fs-900;
+  }
+}
+
+// * image
+.hero__image {
+}
