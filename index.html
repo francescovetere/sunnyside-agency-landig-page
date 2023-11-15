@@ -10,30 +10,106 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="/css/main.css" />
+    <script src="/src/index.js" defer></script>
     <title>Sunnyside agency landing page</title>
   </head>
   <body>
     <main>
+      <!-- * Hero * -->
       <section class="hero">
         <header class="hero__header | main-container">
           <img class="hero__logo" src="/images/logo.svg" alt="logo" />
           <div class="hero__nav">
             <nav>
-              <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Projects</a></li>
-              </ul>
+              <a href="#">About</a>
+              <a href="#">Services</a>
+              <a href="#">Projects</a>
+              <a href="#" class="btn btn-primary">contact</a>
             </nav>
-            <a href="#" class="btn btn-primary">contact</a>
+            <img
+              class="hamburger-icon"
+              src="/images/icon-hamburger.svg"
+              alt="hamburger icon"
+            />
           </div>
         </header>
-        <h1 class="hero__title | main-container">we are creatives</h1>
+        <h1 class="hero__title | main-container">
+          we are creatives
+          <a href="#what_we_do"
+            ><img src="/images/icon-arrow-down.svg" alt="arrow icon"
+          /></a>
+        </h1>
         <img
           class="hero__image"
           src="/images/desktop/image-header.jpg"
           alt="hero image"
         />
+      </section>
+
+      <!-- * What we do * -->
+      <!-- Note: "id" here is need to make this section the :target of .hero__image's click -->
+      <section class="what-we-do" id="what_we_do">
+        <article class="what-we-do__cta">
+          <img
+            class="what-we-do__cta-img"
+            src="/images/desktop/image-transform.jpg"
+            alt="cta image"
+          />
+          <div class="what-we-do__cta-text">
+            <h2 class="what-we-do__cta-title">Transform your brand</h2>
+            <p class="what-we-do__cta-description">
+              We are a full-service creative agency specializing in helping
+              brands grow fast. Engage your clients through compelling visuals
+              that do most of the marketing for you
+            </p>
+            <a class="what-we-do__cta-link" href="#">learn more</a>
+          </div>
+        </article>
+        <article class="what-we-do__cta">
+          <img
+            class="what-we-do__cta-img"
+            src="/images/desktop/image-stand-out.jpg"
+            alt="cta image"
+          />
+          <div class="what-we-do__cta-text">
+            <h2 class="what-we-do__cta-title">
+              Stand out to the right audience
+            </h2>
+            <p class="what-we-do__cta-description">
+              Using a collaborative formula of designers, researchers,
+              photographers, videographers, and copywriters, we’ll build and
+              extend your brand in digital places.
+            </p>
+            <a class="what-we-do__cta-link" href="#">learn more</a>
+          </div>
+        </article>
+        <div class="what-we-do__sectors">
+          <article class="what-we-do__sectors-card">
+            <img
+              class="what-we-do__sectors-image"
+              src="/images/desktop/image-graphic-design.jpg"
+              alt="sector card image"
+            />
+            <h2 class="what-we-do__sectors-title">Graphic Design</h2>
+            <p class="what-we-do__sectors-description">
+              Great design makes you memorable. We deliver artwork that
+              underscores your brand message and captures potential clients’
+              attention.
+            </p>
+          </article>
+          <article class="what-we-do__sectors-card">
+            <img
+              class="what-we-do__sectors-image"
+              src="/images/desktop/image-photography.jpg"
+              alt="sector card image"
+            />
+            <h2 class="what-we-do__sectors-title">Photography</h2>
+            <p class="what-we-do__sectors-description">
+              Increase your credibility by getting the most stunning,
+              high-quality photos that improve your business image.
+            </p>
+          </article>
+        </div>
       </section>
     </main>
   </body>

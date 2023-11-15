@@ -15,6 +15,11 @@ html {
   text-size-adjust: none;
 }
 
+/* Add smooth scolling by default */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Remove default margin in favour of better control in authored CSS */
 body,
 h1,
@@ -113,7 +118,7 @@ a {
   position: relative;
   min-height: 500px;
 }
-@media (min-width: 991px) {
+@media (min-width: 900px) {
   .hero {
     min-height: 100vh;
   }
@@ -132,20 +137,70 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 1em;
-  margin-bottom: 4em;
+  padding-top: 2em;
+  padding-bottom: 4em;
 }
 
-.hero__nav,
-.hero__nav ul {
+.hero__nav > nav {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 2em 3em;
+  color: hsl(0, 0%, 100%);
 }
-.hero__nav ul {
-  list-style: none;
+@media (min-width: 900px) {
+  .hero__nav > nav .btn-primary {
+    background-color: hsl(0, 0%, 100%);
+  }
 }
 
+.hamburger-icon {
+  transition: 300ms opacity;
+}
+.hamburger-icon:hover, .hamburger-icon--active {
+  opacity: 0.5;
+  cursor: pointer;
+}
+@media (min-width: 900px) {
+  .hamburger-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 899.9px) {
+  .hero__nav {
+    position: relative;
+  }
+  .hero__nav > nav {
+    position: absolute;
+    top: 4em;
+    right: 0;
+    flex-direction: column;
+    width: 90vw;
+    padding: 2em 1em;
+    background-color: white;
+    color: hsl(232, 10%, 55%);
+  }
+  .hero__nav > nav::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    aspect-ratio: 1;
+    background-color: inherit;
+    translate: 0 -100%;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  }
+  .hero__nav > nav:not(:has(+ .hamburger-icon--active)) {
+    display: none;
+  }
+}
 .hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
   font-family: Fraunces, serif;
   font-size: 2rem;
   text-align: center;
@@ -153,10 +208,22 @@ a {
   letter-spacing: 0.175em;
   color: hsl(0, 0%, 100%);
 }
-@media (min-width: 991px) {
+@media (min-width: 900px) {
   .hero__title {
     font-size: 3rem;
   }
+}
+
+.btn {
+  padding: 0.75em 1.25em;
+  font-family: Fraunces, serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 100vmax;
+}
+.btn-primary {
+  background-color: hsl(51, 100%, 49%);
+  color: hsl(212, 27%, 19%);
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,17 @@
+@use "../abstracts/typography";
+@use "../abstracts/colors";
+
+.btn {
+  padding: 0.75em 1.25em;
+
+  font-family: typography.$ff-primary-serif;
+  font-size: typography.$fs-350;
+  text-transform: uppercase;
+
+  border-radius: 100vmax;
+
+  &-primary {
+    background-color: colors.$clr-yellow;
+    color: colors.$clr-very-dark-desatured-blue;
+  }
+}
