@@ -41,12 +41,6 @@
   gap: 2em 3em;
 
   color: colors.$clr-white;
-
-  .btn-primary {
-    @include mixins.mq(large, up) {
-      background-color: colors.$clr-white;
-    }
-  }
 }
 
 // * hamburger menu
@@ -115,6 +109,7 @@
 
   font-family: typography.$ff-primary-serif;
   font-size: typography.$fs-800;
+  font-size: typography.$fw-900;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.175em;

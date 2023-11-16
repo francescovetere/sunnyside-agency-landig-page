@@ -1,11 +1,13 @@
 @use "../abstracts/typography";
 @use "../abstracts/colors";
+@use "../abstracts/mixins";
 
 .btn {
   padding: 0.75em 1.25em;
 
   font-family: typography.$ff-primary-serif;
   font-size: typography.$fs-350;
+  font-size: typography.$fw-600;
   text-transform: uppercase;
 
   border-radius: 100vmax;
@@ -13,6 +15,20 @@
   &-primary {
     background-color: colors.$clr-yellow;
     color: colors.$clr-very-dark-desatured-blue;
+
+    @include mixins.mq(large, up) {
+      background-color: colors.$clr-white;
+
+      // * Active state (only for desktop)
+      transition-property: background-color color;
+      transition-duration: 300ms;
+      transition-timing-function: ease-out;
+
+      &:hover {
+        background-color: rgba(214, 214, 214, 0.261);
+        color: colors.$clr-white;
+      }
+    }
   }
 
   &-cta {
@@ -37,8 +53,10 @@
     padding: 0;
 
     font-family: typography.$ff-primary-serif;
+    font-weight: typography.$fw-900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    color: colors.$clr-very-dark-desatured-blue;
 
     &::after {
       content: "";
@@ -56,6 +74,16 @@
       translate: -50% 0;
 
       border-radius: 100vmax;
+    }
+
+    // * Active state
+    &::after {
+      transition: opacity 250ms ease-in;
+      opacity: 0.3;
+    }
+
+    &:hover::after {
+      opacity: 1;
     }
   }
 }

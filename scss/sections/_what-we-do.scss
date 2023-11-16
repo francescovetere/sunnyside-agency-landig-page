@@ -17,6 +17,8 @@
 
     font-family: typography.$ff-primary-serif;
     font-size: typography.$fs-500;
+    font-weight: typography.$fw-900;
+    color: colors.$clr-very-dark-desatured-blue;
   }
 
   &-description {
@@ -45,6 +47,22 @@
     @include mixins.mq(large, down) {
       min-height: 700px;
     }
+
+    // * Little gradient to help increase text readability
+    // position: relative;
+
+    // &::after {
+    //   content: "";
+
+    //   position: absolute;
+    //   inset: 0;
+
+    //   background-image: linear-gradient(
+    //     to bottom,
+    //     hsla(0, 0%, 10%, 0.2),
+    //     transparent
+    //   );
+    // }
   }
 
   &-text {
@@ -59,6 +77,8 @@
 
     font-family: typography.$ff-primary-serif;
     font-size: typography.$fs-500;
+    font-weight: typography.$fw-900;
+    color: colors.$clr-very-dark-desatured-blue;
   }
 
   &-image {
@@ -73,17 +93,26 @@
 // * so we just modify .main-container's relative width
 :where(.what-we-do__cta, .what-we-do__sectors) .main-container {
   @include mixins.mq(large, up) {
-    --main-container-relative-width: 70%;
+    --main-container-relative-width: 60%;
   }
 }
 
 // * Grid stuff
 
 @include mixins.mq(large, up) {
+  // * We want the rows to be equal sized in height
+  .what-we-do {
+    display: grid;
+    grid-auto-rows: minmax(0, 1fr);
+  }
+
   .what-we-do__cta,
   .what-we-do__sectors {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .what-we-do__cta {
     align-items: center;
   }
 
