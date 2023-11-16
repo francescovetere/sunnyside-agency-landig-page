@@ -214,6 +214,76 @@ a {
   }
 }
 
+.what-we-do__cta-text {
+  padding-block: 4em;
+  text-align: center;
+}
+@media (min-width: 900px) {
+  .what-we-do__cta-text {
+    padding-block: 6em;
+  }
+}
+.what-we-do__cta-title {
+  margin-bottom: 1em;
+  font-family: Fraunces, serif;
+  font-size: 1.75rem;
+}
+.what-we-do__cta-description {
+  margin-bottom: 1em;
+  color: hsl(232, 10%, 55%);
+}
+.what-we-do__cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.what-we-do__sectors-card {
+  display: grid;
+  grid-template-areas: "a";
+  align-items: end;
+}
+.what-we-do__sectors-card > * {
+  grid-area: a;
+}
+@media (max-width: 899.9px) {
+  .what-we-do__sectors-card {
+    min-height: 700px;
+  }
+}
+.what-we-do__sectors-text {
+  padding-block: 4em;
+  text-align: center;
+  color: hsl(167, 40%, 24%);
+}
+.what-we-do__sectors-title {
+  margin-bottom: 1em;
+  font-family: Fraunces, serif;
+  font-size: 1.75rem;
+}
+.what-we-do__sectors-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  :where(.what-we-do__cta, .what-we-do__sectors) .main-container {
+    --main-container-relative-width: 70%;
+  }
+}
+
+@media (min-width: 900px) {
+  .what-we-do__cta,
+  .what-we-do__sectors {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+  }
+  .what-we-do__cta:nth-child(odd) > img {
+    order: 1;
+  }
+}
 .btn {
   padding: 0.75em 1.25em;
   font-family: Fraunces, serif;
@@ -224,6 +294,34 @@ a {
 .btn-primary {
   background-color: hsl(51, 100%, 49%);
   color: hsl(212, 27%, 19%);
+}
+.btn-cta {
+  --_background-color-underline: currentColor;
+  position: relative;
+  isolation: isolate;
+  padding: 0;
+  font-family: Fraunces, serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.btn-cta--yellow {
+  --_background-color-underline: hsl(51, 100%, 49%);
+}
+.btn-cta--pink {
+  --_background-color-underline: hsl(7, 99%, 70%);
+}
+.btn-cta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 110%;
+  height: 8px;
+  background-color: var(--_background-color-underline);
+  opacity: 0.6;
+  translate: -50% 0;
+  border-radius: 100vmax;
 }
 
 /*# sourceMappingURL=main.css.map */
