@@ -60,42 +60,42 @@
 }
 
 @include mixins.mq(large, down) {
-  .hero__nav {
+  .hero__header {
     position: relative;
+  }
 
-    > nav {
+  .hero__nav > nav {
+    position: absolute;
+    top: 6em;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+
+    padding: 2em 1em;
+    background-color: white;
+
+    color: colors.$clr-dark-grayish-blue;
+
+    &::after {
+      content: "";
+
+      display: block;
+
       position: absolute;
-      top: 4em;
+      top: 1px;
       right: 0;
 
-      flex-direction: column;
+      width: 30px;
+      aspect-ratio: 1;
+      background-color: inherit;
 
-      width: 90vw;
-      padding: 2em 1em;
-      background-color: white;
+      translate: 0 -100%;
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
 
-      color: colors.$clr-dark-grayish-blue;
-
-      &::after {
-        content: "";
-
-        display: block;
-
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        width: 30px;
-        aspect-ratio: 1;
-        background-color: inherit;
-
-        translate: 0 -100%;
-        clip-path: polygon(100% 0, 100% 100%, 0 100%);
-      }
-
-      &:not(:has(+ .hamburger-icon--active)) {
-        display: none;
-      }
+    &:not(:has(+ .hamburger-icon--active)) {
+      display: none;
     }
   }
 }
